@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AppCoder.views import saludo, saludo_dos, saludar_a, mostrar_mi_template
-from ejemplo.views import index, index_tres
+from ejemplo.views import index, index_tres, monstrar_familiares
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +26,5 @@ urlpatterns = [
     path('mostrar-mi-template/', mostrar_mi_template),
     path('saludar/', index),
     path('mostrar-notas/', index_tres),
+    path('mi-familia/', monstrar_familiares),
 ]
