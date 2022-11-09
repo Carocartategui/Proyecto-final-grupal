@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppCoder.views import saludo, saludo_dos, saludar_a, mostrar_mi_template
-from ejemplo.views import index, index_tres, monstrar_familiares
+from AppCoder.views import AltaEmpleados, BuscarEmpleados, mostrar_empleados
 from blog.views import index as blog_index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', blog_index),
+    path('empleado/alta/', AltaEmpleados),
+    path('empleado/buscar/', BuscarEmpleados.as_view()),
+    path('empleado/listado/', mostrar_empleados),
+]
+
+
+"""    
+Borre los path que no usamos mas (Matias)
     path('hola-mundo/saludar', saludo),
     path('hola-mundo/saludo_dos', saludo_dos),
     path('saludar_a/<nombre>', saludar_a),
@@ -28,5 +36,5 @@ urlpatterns = [
     path('saludar/', index),
     path('mostrar-notas/', index_tres),
     path('mi-familia/', monstrar_familiares),
-    path('blog/', blog_index),
-]
+    
+    """

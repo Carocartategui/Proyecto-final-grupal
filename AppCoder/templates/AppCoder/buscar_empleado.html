@@ -1,0 +1,18 @@
+{% extends 'AppCoder/base.html' %}
+{% block titulo%} Lista de todos los empleados {% endblock %}
+{% block contenido %}
+  
+  <form action="/empleados/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for empleados in lista_empleados %}
+      <ul>
+          <li> Nombre: {{empleados.nombre}}, Apellido: {{empleados.Apellido}}, DNI: {{empleados.numero_documento}}, Mail:{{empleados.E_Mail}} }</li>
+      </ul>
+      {% endfor %}
+
+  </body>
+  </html>
