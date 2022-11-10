@@ -3,7 +3,7 @@ from AppCoder.models import Empleados, Pedidos
 
 
 class buscar_empleado(forms.Form):
-      nombre = forms.CharField(max_length=100)
+  nombre = forms.CharField(max_length=100)
 
 
 class EmpleadosForm(forms.ModelForm):

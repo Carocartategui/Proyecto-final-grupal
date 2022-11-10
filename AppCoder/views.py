@@ -22,9 +22,9 @@ def Home(request):
 
 """Busqueda Empleados"""
 
-class buscar_Empleado(View):
+class buscarEmpleado(View):
 
-    form_class = buscar_empleado
+    form_class = buscar_empleado 
     template_name = 'AppCoder/buscar_empleado.html'
     initial = {"nombre":""}
 
