@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from AppCoder.models import Empleados, Pedidos
 from AppCoder.forms import EmpleadosForm, buscar_empleado, PedidosForm
 from django.views import View
+from django.views.generic import ListView
 
 def saludo(request):
     return HttpResponse("Hola Mi Primer App")
@@ -100,3 +101,9 @@ class AltaPedidos(View):
 def mostrar_pedidos(request):
   lista_pedidos = Pedidos.objects.all()
   return render(request, "AppCoder/pedidos.html", {"lista_pedidos": lista_pedidos})
+
+
+"""prueba empleados list"""
+
+class EmpleadosList(ListView):
+  model = Empleados
