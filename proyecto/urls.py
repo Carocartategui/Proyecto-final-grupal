@@ -21,7 +21,7 @@ from blog.views import index as blog_index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', blog_index),
-    path('empleado/alta', AltaEmpleados.as_view()), #<- no funciona, muestra el formulario de carga pero no los sube
+    path('empleado/alta', AltaEmpleados.as_view()), #<- funciona
     path('empleado/buscar', buscar_empleado), # <- no me deja meterle es as.view()
     path('empleado/listado', mostrar_empleados), # <- funciona
     path('pedidos/alta', AltaPedidos.as_view()), # <- funciona
