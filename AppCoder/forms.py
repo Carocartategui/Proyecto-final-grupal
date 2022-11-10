@@ -1,5 +1,5 @@
 from django import forms
-from AppCoder.models import Empleados
+from AppCoder.models import Empleados, Pedidos
 
 
 class buscar_empleado(forms.Form):
@@ -10,3 +10,9 @@ class EmpleadosForm(forms.ModelForm):
   class Meta:
     model = Empleados
     fields = ['nombre', 'apellido', 'direccion', 'numero_documento', 'numero_de_telefono', 'e_mail', 'contrasena']
+
+
+class PedidosForm(forms.ModelForm):
+  class Meta:
+    model = Pedidos
+    fields = ['nombre_cliente', 'empleado', 'pedido', 'estado', 'fecha']

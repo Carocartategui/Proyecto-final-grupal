@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import Empleados
-from AppCoder.forms import EmpleadosForm, buscar_empleado
+from AppCoder.models import Empleados, Pedidos
+from AppCoder.forms import EmpleadosForm, buscar_empleado, PedidosForm
 from django.views import View
 
 def saludo(request):
@@ -71,3 +71,32 @@ def mostrar_empleados(request):
   lista_empleados = Empleados.objects.all()
   return render(request, "AppCoder/empleados.html", {"lista_empleados": lista_empleados})
 
+"""Formulario de ingreso de pedidos"""
+
+class AltaPedidos(View):
+
+    form_class = PedidosForm
+    template_name = 'AppCoder/alta_pedido.html'
+    initial = {'nombre_cliente':"", 'empleado':"", 'pedido':"", 'estado':"", 'fecha':""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form':form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            msg_exito = f"se cargo con éxito el pedido de {form.cleaned_data.get('nombre_cliente')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito})
+        
+        return render(request, self.template_name, {"form": form})
+
+
+"""Mostrar todos los pedidos"""
+
+def mostrar_pedidos(request):
+  lista_pedidos = Pedidos.objects.all()
+  return render(request, "AppCoder/pedidos.html", {"lista_pedidos": lista_pedidos})
