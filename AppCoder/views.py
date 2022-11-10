@@ -36,7 +36,7 @@ class BuscarEmpleados(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             nombre = form.cleaned_data.get("nombre")
-            lista_empleados = Empledos.objects.filter(nombre__icontains=nombre).all() 
+            lista_empleados = Empleados.objects.filter(nombre__icontains=nombre).all() 
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
                                                         'lista_empleados':lista_empleados})

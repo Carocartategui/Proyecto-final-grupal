@@ -11,9 +11,9 @@ class Empleados(models.Model):
     direccion = models.CharField(max_length=200)
     numero_documento = models.IntegerField()
     numero_de_telefono = models.IntegerField()
-    E_Mail = models.CharField(max_length=100)
-    Contrasena = models.CharField(max_length=100)
+    e_mail = models.CharField(max_length=100)
+    contrasena = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.nombre}, {self.apellido}, {self.direccion}, {self.numero_documento}, {self.numero_de_telefono}, {self.E_Mail}, {self.Contrasena}, {self.id}"
+        return f"{self.nombre}, {self.apellido}, {self.direccion}, {self.numero_documento}, {self.numero_de_telefono}, {self.e_mail}, {self.contrasena}, {self.id}"
 
