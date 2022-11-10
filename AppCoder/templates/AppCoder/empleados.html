@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <h1>Lista de los empleados</h1>
-
+{% extends 'AppCoder/base.html' %}
+{% block titulo%} Lista de todos los empleados {% endblock %}
+{% block contenido %}
     {% for empleados in lista_empleados %}
         <ul>
-            <li> Nombre: {{empleados.nombre}}, Apellido: {{empleados.Apellido}}, DNI: {{empleados.numero_documento}}, Mail:{{empleados.E_Mail}} </li>
+            <li> Nombre: {{empleados.nombre}}, Apellido: {{empleados.apellido}}, Direccion: {{empleados.direccion}}, DNI: {{empleados.numero_documento}}, Telefono: {{empleados.numero_de_telefono}}, Mail:{{empleados.e_mail}} , Contraseña:{{empleados.contrasena}} </li>
         </ul>
     {% endfor %}
-    
-</body>
-</html>
+{% endblock %}

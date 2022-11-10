@@ -1,8 +1,8 @@
 from AppCoder.models import Empleados
 
-Empleados(nombre="Rosario", apellido="Rosario", direccion="Rio Parana 745", numero_pasaporte=123123).save()
-Familiar(nombre="Alberto", direccion="Rio Parana 745", numero_pasaporte=890890).save()
-Familiar(nombre="Samuel", direccion="Rio Parana 745", numero_pasaporte=345345).save()
-Familiar(nombre="Florencia", direccion="Rio Parana 745", numero_pasaporte=567567).save()
+Empleados(nombre="Rosario", apellido="Gomez", direccion="Rio Parana 745", numero_documento=123123, numero_de_telefono=1165588978, e_mail="rosariogomez@gmail.com", contrasena="123456").save()
+Empleados(nombre="Juan", apellido="Perez", direccion="Av Centenario 1745", numero_documento=35621478, numero_de_telefono=1158963258, e_mail="juanperez@gmail.com", contrasena="123456").save()
+Empleados(nombre="Martin", apellido="Bolazo", direccion="Av Belgrano 1234", numero_documento=12852369, numero_de_telefono=1125631478, e_mail="martinbolazo@gmail.com", contrasena="123456").save()
+Empleados(nombre="Monica", apellido="Gutierrez", direccion="Vuelta de Obligado 1478", numero_documento=35789452, numero_de_telefono=1141789562, e_mail="monicagutierrez@gmail.com", contrasena="123456").save()
 
 print("Se cargo con éxito los usuarios de pruebas")

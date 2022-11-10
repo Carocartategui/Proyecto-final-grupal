@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from AppCoder.models import Empleados
-from AppCoder.forms import EmpleadosForm 
+from AppCoder.forms import EmpleadosForm, buscar_empleado
 from django.views import View
 
 def saludo(request):
@@ -22,9 +22,9 @@ def Home(request):
 
 """Busqueda Empleados"""
 
-class BuscarEmpleados(View):
+class buscar_Empleado(View):
 
-    form_class = Buscar
+    form_class = buscar_empleado
     template_name = 'AppCoder/buscar_empleado.html'
     initial = {"nombre":""}
 
@@ -48,7 +48,7 @@ class AltaEmpleados(View):
 
     form_class = EmpleadosForm
     template_name = 'AppCoder/alta_empleado.html'
-    initial = {"nombre":"", "apellido":"", "direccion":"", "numero_documento":"", "numero_de_telefono":"", "E_mail":"", "contrasena":""}
+    initial = {"nombre":"", "apellido":"", "direccion":"", "numero_documento":"", "numero_de_telefono":"", "e_mail":"", "contrasena":""}
 
     def get(self, request):
         form = self.form_class(initial=self.initial)
@@ -69,5 +69,5 @@ class AltaEmpleados(View):
 """mostrar todos los empleados"""
 def mostrar_empleados(request):
   lista_empleados = Empleados.objects.all()
-  return render(request, "ejemplo/empleados.html", {"lista_empleados": lista_empleados})
+  return render(request, "AppCoder/empleados.html", {"lista_empleados": lista_empleados})
 

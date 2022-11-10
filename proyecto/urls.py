@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppCoder.views import AltaEmpleados, BuscarEmpleados, mostrar_empleados
+from AppCoder.views import (AltaEmpleados, buscar_empleado, mostrar_empleados)
 from blog.views import index as blog_index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', blog_index),
-    path('empleado/alta/', AltaEmpleados),
-    path('empleado/buscar/', BuscarEmpleados.as_view()),
-    path('empleado/listado/', mostrar_empleados),
+    path('empleado/alta', AltaEmpleados.as_view()), #<- no funciona, muestra el formulario de carga pero no los sube
+    path('empleado/buscar', buscar_empleado), # <- no me deja meterle es as.view()
+    path('empleado/listado', mostrar_empleados), # <- ya funciona
 ]
 
 
