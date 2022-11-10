@@ -2,7 +2,7 @@
 {% block titulo%} Alta de nuevo empleado {% endblock %}
 {% block contenido %}
   
-  <form action="/empleados/alta" method="post">
+  <form action="/empleado/alta" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">

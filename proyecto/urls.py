@@ -26,6 +26,7 @@ urlpatterns = [
     path('empleado/listado', mostrar_empleados), # <- ya funciona
     path('pedidos/alta', AltaPedidos.as_view()), # <- funciona
     path('pedidos/listado', mostrar_pedidos), #<- funciona
+    path('panel-empleados/', EmpleadosList.as_view()),
 ]
 
 
