@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos)
+from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar)
 from blog.views import index as blog_index
 
 urlpatterns = [
@@ -26,11 +26,17 @@ urlpatterns = [
     path('empleado/listado', mostrar_empleados), # <- ya funciona
     path('pedidos/alta', AltaPedidos.as_view()), # <- funciona
     path('pedidos/listado', mostrar_pedidos), #<- funciona
-    path('panel-empleados/', EmpleadosList.as_view()),
+    path('panel-empleados/', EmpleadosList.as_view()),  #<- funciona
+    path('panel-empleados/crear', EmpleadosCrear.as_view()),  #<- funciona
+    path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view()),  #<- funciona
+    path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view()),  #<- funciona
 ]
 
 
+
+
 """    
+
 Borre los path que no usamos mas (Matias)
     path('hola-mundo/saludar', saludo),
     path('hola-mundo/saludo_dos', saludo_dos),

@@ -7,14 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-<ul>
 
-{% block buscar %} {% endblock %}
-
-{% for empleados in object_list %}
-    <li>{{empleados}}</li>
-{% endfor %}    
-</ul>
+    <form method="post">
+        {% csrf_token %}
+        "¿ Estás seguro de borrar el empleado {{ object }} ?"
+        <input type="submit" value="SI">
+    </form>
 
 </body>
 </html>

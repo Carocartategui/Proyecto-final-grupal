@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from AppCoder.models import Empleados, Pedidos
 from AppCoder.forms import EmpleadosForm, buscar_empleado, PedidosForm
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 def saludo(request):
     return HttpResponse("Hola Mi Primer App")
@@ -107,3 +107,27 @@ def mostrar_pedidos(request):
 
 class EmpleadosList(ListView):
   model = Empleados
+
+
+
+"""prueba create view"""
+
+class EmpleadosCrear(CreateView):
+  model =  Empleados
+  success_url = "/panel-empleados"
+  fields = ["nombre", "apellido", "direccion", "numero_documento", "numero_de_telefono", "e_mail", "contrasena"]
+
+
+"""prueba delete view"""
+
+class EmpleadosBorrar(DeleteView):
+  model = Empleados
+  success_url = "/panel-empleados"
+
+
+"""prueba update view"""
+
+class EmpleadosActualizar(UpdateView):
+  model = Empleados
+  success_url = "/panel-empleados"
+  fields = ["nombre", "apellido", "direccion", "numero_documento", "numero_de_telefono", "e_mail", "contrasena"]

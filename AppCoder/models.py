@@ -24,3 +24,13 @@ class Pedidos(models.Model):
     def __str__(self):
         return f"{self.nombre_cliente}, {self.empleado}, {self.pedido}, {self.estado}, {self.fecha}, {self.id}"
 
+
+class TiposDePizza(models.Model):
+    nombre_producto = models.CharField(max_length=50)
+    ingredientes = models.CharField(max_length=150) 
+    descripcion = models.CharField(max_length=150) 
+    codigo_producto = models.IntegerField()
+    
+
+    def __str__(self):
+        return f"{self.nombre_producto}, {self.codigo_producto}, {self.id}"
