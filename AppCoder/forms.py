@@ -16,3 +16,12 @@ class PedidosForm(forms.ModelForm):
   class Meta:
     model = Pedidos
     fields = ['nombre_cliente', 'empleado', 'pedido', 'estado', 'fecha']
+
+
+"""
+class ProductosForm(forms.ModelForm):
+  class Meta:
+    model = Productos
+    fields = ['nombre_producto', 'ingredientes', 'descripcion', 'codigo_producto']
+
+"""

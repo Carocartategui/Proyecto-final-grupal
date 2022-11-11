@@ -25,7 +25,7 @@ class Pedidos(models.Model):
         return f"{self.nombre_cliente}, {self.empleado}, {self.pedido}, {self.estado}, {self.fecha}, {self.id}"
 
 
-class TiposDePizza(models.Model):
+class Productos(models.Model):
     nombre_producto = models.CharField(max_length=50)
     ingredientes = models.CharField(max_length=150) 
     descripcion = models.CharField(max_length=150) 
@@ -33,4 +33,4 @@ class TiposDePizza(models.Model):
     
 
     def __str__(self):
-        return f"{self.nombre_producto}, {self.codigo_producto}, {self.id}"
+        return f"{self.nombre_producto}, {self.ingredientes}, {self.descripcion}, {self.codigo_producto}, {self.id}"

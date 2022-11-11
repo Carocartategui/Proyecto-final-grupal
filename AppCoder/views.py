@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import Empleados, Pedidos
+from AppCoder.models import Empleados, Pedidos, Productos
 from AppCoder.forms import EmpleadosForm, buscar_empleado, PedidosForm
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
@@ -131,3 +131,8 @@ class EmpleadosActualizar(UpdateView):
   model = Empleados
   success_url = "/panel-empleados"
   fields = ["nombre", "apellido", "direccion", "numero_documento", "numero_de_telefono", "e_mail", "contrasena"]
+
+"""prueba productos list"""
+
+class ProductosList(ListView):
+  model = Productos
