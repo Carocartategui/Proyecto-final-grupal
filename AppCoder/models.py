@@ -19,7 +19,7 @@ class Pedidos(models.Model):
     empleado = models.CharField(max_length=100) #<- esto estaria bueno que se autocomplete cuando se loguea el empleado
     pedido = models.CharField(max_length=200)
     estado= models.CharField(max_length=200)
-    fecha = models.CharField(max_length=200) #<- esto estaria bueno que se ponga automatico hr fecha
+    fecha = models.CharField(max_length=200)  #<- cambiado a automatico """DateTimeField(auto_created=True)"""
 
     def __str__(self):
         return f"{self.nombre_cliente}, {self.empleado}, {self.pedido}, {self.estado}, {self.fecha}, {self.id}"

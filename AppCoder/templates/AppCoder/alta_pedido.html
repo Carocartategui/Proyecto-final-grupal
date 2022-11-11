@@ -1,8 +1,8 @@
 {% extends 'AppCoder/base.html' %}
 {% block titulo%} Alta de nuevo pedidos {% endblock %}
 {% block contenido %}
-  
-  <form action="/pedidos/alta" method="post">
+
+  <form action="/blog/pedidos/alta" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">

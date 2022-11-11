@@ -15,7 +15,7 @@ class EmpleadosForm(forms.ModelForm):
 class PedidosForm(forms.ModelForm):
   class Meta:
     model = Pedidos
-    fields = ['nombre_cliente', 'empleado', 'pedido', 'estado', 'fecha']
+    fields = ['nombre_cliente', 'empleado', 'pedido', 'estado', 'fecha'] #-> saque la fecha por que la voy a poner automatico
 
 
 """

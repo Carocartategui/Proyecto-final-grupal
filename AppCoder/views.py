@@ -17,7 +17,7 @@ def saludar_a(request, nombre):
 def mostrar_mi_template(request):
     return render (request, "AppCoder/index.html") 
 
-
+"""Home page link"""
 def Home(request):
     return render (request, "AppCoder/home.html") 
 
@@ -136,3 +136,10 @@ class EmpleadosActualizar(UpdateView):
 
 class ProductosList(ListView):
   model = Productos
+
+"""pagina de about"""
+
+def About(request):
+    return render (request, "AppCoder/about.html") 
+
+    
