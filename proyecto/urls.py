@@ -19,7 +19,7 @@ from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, Al
 from blog.views import index as blog_index
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #-> acer 1234
     path('blog/', blog_index),
     path('about', About),  #<- funciona para poner la decripcion de lo que hacela pagina
     path('home', Home),  #<- funciona para el home...(que me imagino que es lo mismo que el blog?)
