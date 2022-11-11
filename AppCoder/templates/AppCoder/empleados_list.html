@@ -12,7 +12,12 @@
 {% block buscar %} {% endblock %}
 
 {% for empleados in object_list %}
-    <li>{{empleados}}</li>
+    <li>
+        {{empleados}}
+        <a href="{% url 'empleados-borrar' empleados.id %}">Borrar</a>
+        <a href="{% url 'empleados-actualizar' empleados.id %}">Actualizar</a>
+    
+    </li>
 {% endfor %}    
 </ul>
 

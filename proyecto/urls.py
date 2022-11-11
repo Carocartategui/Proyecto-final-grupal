@@ -26,10 +26,10 @@ urlpatterns = [
     path('empleado/listado', mostrar_empleados), # <- ya funciona
     path('pedidos/alta', AltaPedidos.as_view()), # <- funciona
     path('pedidos/listado', mostrar_pedidos), #<- funciona
-    path('panel-empleados/', EmpleadosList.as_view()),  #<- funciona
-    path('panel-empleados/crear', EmpleadosCrear.as_view()),  #<- funciona
-    path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view()),  #<- funciona
-    path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view()),  #<- funciona
+    path('panel-empleados/', EmpleadosList.as_view(), name="empleados-lista"),  #<- funciona
+    path('panel-empleados/crear', EmpleadosCrear.as_view(), name="empleados-crear"), #<- funciona
+    path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
+    path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
 ]
 
 

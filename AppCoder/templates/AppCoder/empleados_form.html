@@ -11,8 +11,10 @@
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="agregar">
+        <input type="submit" value="Guardar">
     </form>
+
+    <a href="{% url 'empleados-lista' %}">Volver a lista de empleados</a>
 
 </body>
 </html>
