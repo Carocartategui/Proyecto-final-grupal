@@ -31,8 +31,4 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 4acafe2c78cdb6c00c6d8003234f18cc7885ff9a
