@@ -4,7 +4,9 @@ from AppCoder.models import Empleados, Pedidos, Productos
 from AppCoder.forms import EmpleadosForm, buscar_empleado, PedidosForm
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def saludo(request):
     return HttpResponse("Hola Mi Primer App")
 

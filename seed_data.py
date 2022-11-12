@@ -14,7 +14,7 @@ Pedidos(nombre_cliente="Rosario", empleado="Gomez", pedido="muza", estado="entre
 
 print("Se cargo con éxito los pedidos de pruebas")
 
-"""
+
 
 from AppCoder.models import Productos
 
@@ -26,3 +26,9 @@ Productos(nombre_producto="Empanada Carne", ingredientes="Harina, Agua, carne pi
 
 
 print("Se cargo con éxito los productos de pruebas")
+"""
+from blog.models import Post
+
+Post(title="Mi post", short_content="un post", content="sadljalsjdlkajsdljasljdlaksjd").save()
+
+print("Se cargo con éxito los post de pruebas")

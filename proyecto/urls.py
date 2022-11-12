@@ -14,13 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About, Home)
-from blog.views import index as blog_index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls), #-> acer 1234
-    path('blog/', blog_index),
     path('about', About),  #<- funciona para poner la decripcion de lo que hacela pagina
     path('home', Home),  #<- funciona para el home...(que me imagino que es lo mismo que el blog?)
     path('empleados/alta', AltaEmpleados.as_view()), #<- ya funciona :)
@@ -33,7 +32,7 @@ urlpatterns = [
     path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
     path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
     path('blog/productos/listado', ProductosList.as_view(), name="productos-lista"),  #<- funciona
-    
+    path('blog/', include('blog.urls'))
 ]
 
 

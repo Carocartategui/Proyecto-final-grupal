@@ -34,3 +34,5 @@ class Productos(models.Model):
 
     def __str__(self):
         return f"{self.nombre_producto}, {self.ingredientes}, {self.descripcion}, {self.codigo_producto}, {self.id}"
+
+

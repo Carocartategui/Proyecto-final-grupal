@@ -22,7 +22,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/blog/">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/login/">Log In</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
@@ -121,10 +121,11 @@
                     <div class="card mb-4">
                         <div class="card-header">Search</div>
                         <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                            </div>
+                            <form action="{% url 'search-by-name-post' %}" method="get">
+                                {% csrf_token %}
+                                <input type="search" name="post-title">
+                                <input type="submit" value="go">
+                           </form>
                         </div>
                     </div>
                     <!-- Categories widget-->
