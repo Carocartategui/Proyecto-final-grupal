@@ -144,4 +144,23 @@ class ProductosList(ListView):
 def About(request):
     return render (request, "AppCoder/about.html") 
 
-    
+
+"""lista de pedidos"""
+
+class PedidosList(ListView):
+  model = Pedidos
+
+
+"""create view de pedidos"""
+
+class PedidosCrear(CreateView):
+  model = Pedidos
+  success_url = "/panel-pedidos"
+  fields = ["nombre_cliente", "empleado", "pedido", "estado", "fecha"]
+
+"""update view de pedidos"""
+
+class PedidosActualizar(UpdateView):
+  model = Pedidos
+  success_url = "/panel-pedidos"
+  fields = ["nombre_cliente", "empleado", "pedido", "estado", "fecha"]

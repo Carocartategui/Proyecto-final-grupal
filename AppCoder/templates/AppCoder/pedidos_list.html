@@ -1,0 +1,18 @@
+{% extends 'AppCoder/base.html' %}
+{% block titulo%} Lista de todos los pedidos {% endblock %}
+{% block contenido %}
+
+{% block buscar %} {% endblock %}
+
+{% for pedidos in object_list %}
+    <li>
+        {{pedidos}}
+
+        <a href="{% url 'pedidos-actualizar' pedidos.id %}">Actualizar</a>
+    
+    
+    </li>
+{% endfor %}    
+</ul>
+
+{% endblock %}

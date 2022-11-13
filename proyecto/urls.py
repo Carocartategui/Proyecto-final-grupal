@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About, Home)
+from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About, Home, PedidosList, PedidosCrear, PedidosActualizar)
 
 
 urlpatterns = [
@@ -32,7 +32,14 @@ urlpatterns = [
     path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
     path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
     path('blog/productos/listado', ProductosList.as_view(), name="productos-lista"),  #<- funciona
+<<<<<<< HEAD
     path('blog/', include('blog.urls')) #<- esto relaciona a los URLS de las funciones creadas en blog.
+=======
+    path('blog/', include('blog.urls')),
+    path('panel-pedidos/', PedidosList.as_view(), name="pedidos-lista"),
+    path('panel-pedidos/crear', PedidosCrear.as_view(), name="pedidos-crear"),
+    path('panel-pedidos/<int:pk>/actualizar', PedidosActualizar.as_view(), name="pedidos-actualizar"),
+>>>>>>> cdc90e773d267bb141493c7db9ef2709b8fbd16f
 ]
 
 

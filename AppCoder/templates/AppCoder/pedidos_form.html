@@ -1,0 +1,13 @@
+{% extends 'AppCoder/base.html' %}
+{% block titulo%} Alta pedidos {% endblock %}
+{% block contenido %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Guardar">
+    </form>
+
+    <a href="{% url 'pedidos-lista' %}">Volver a lista de pedidos</a>
+
+{% endblock %}
