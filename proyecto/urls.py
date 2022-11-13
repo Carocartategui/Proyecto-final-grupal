@@ -32,7 +32,7 @@ urlpatterns = [
     path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
     path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
     path('blog/productos/listado', ProductosList.as_view(), name="productos-lista"),  #<- funciona
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')) #<- esto relaciona a los URLS de las funciones creadas en blog.
 ]
 
 

@@ -10,5 +10,5 @@ urlpatterns = [
     path('delete/<int:pk>', DeletePost.as_view(), name="delete-post"),
     path('search-by-name/', SearchPostByName.as_view(), name="search-by-name-post"),
     path('blog/login/', BlogLogin.as_view(), name="blog-login"),
-    path('logout/', BlogLogout.as_view(), name="blog-logout"),
+    path('blog/logout/', BlogLogout.as_view(), name="blog-logout"),
 ]
