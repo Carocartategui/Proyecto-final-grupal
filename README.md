@@ -5,7 +5,7 @@ Comision: 44065 Profesor: German Martinez Tutor: Esteban Acevedo
 Grupo Conformado por:
 
     Carolina Cartategui
-    Claudio Ruhlmann
+    Claudio Matias Ruhlmann
     Christian Porcel de Peralta
 
 El ejemplo de MVT contiene codigo de:
