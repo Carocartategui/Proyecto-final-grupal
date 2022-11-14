@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, CreateView
 from blog.models import Post
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.forms import UserCreationForm
 
 @login_required
 def index(request):
@@ -43,3 +44,9 @@ class BlogLogin(LoginView):
 
 class BlogLogout(LogoutView):
     template_name = 'blog/blog_logout.html'
+
+class BlogSignUp(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("blog-login")
+    template_name = "blog/signup.html"
+

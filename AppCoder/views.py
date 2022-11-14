@@ -164,3 +164,6 @@ class PedidosActualizar(UpdateView):
   model = Pedidos
   success_url = "/panel-pedidos"
   fields = ["nombre_cliente", "empleado", "pedido", "estado", "fecha"]
+
+
+  
