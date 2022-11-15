@@ -16,7 +16,7 @@ class ListPost(LoginRequiredMixin, ListView):
 
 class CreatePost(CreateView):
     model=Post
-    fields = ['title', 'short_content', 'content']
+    fields = ['title', 'short_content', 'content', 'image']
     success_url = reverse_lazy("list-post")
 
 class DetailPost(DetailView):
@@ -24,7 +24,7 @@ class DetailPost(DetailView):
 
 class UpdatePost(UpdateView):
     model=Post
-    fields=['title', 'short_content', 'content']
+    fields=['title', 'short_content', 'content', 'image']
     success_url = reverse_lazy("list-post")
 
 class DeletePost(DeleteView):
