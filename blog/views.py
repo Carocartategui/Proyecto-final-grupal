@@ -7,11 +7,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 
-@login_required
-def index(request):
-    return render(request, 'blog/index.html')
 
-class ListPost(LoginRequiredMixin, ListView):
+def index(request):
+    posts = Post.objects.order_by('-date_published').all()
+    return render(request, 'blog/index.html', {"posts": posts})
+
+
+class ListPost(ListView):
     model=Post
 
 class CreatePost(CreateView):
