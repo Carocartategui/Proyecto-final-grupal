@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block titulo%} Lista de todos los usuarios {% endblock %}
+{% block contenido %}
+
+{% block buscar %} {% endblock %}
+
+{% for usuarios in object_list %}
+    <li>
+        {{usuarios}}
+
+        <a href="{% url 'usuarios-actualizar' usuarios.id %}">Actualizar</a>
+    
+    
+    </li>
+{% endfor %}    
+</ul>
+
+{% endblock %}
+
+{% endblock %}

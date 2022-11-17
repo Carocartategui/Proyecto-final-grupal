@@ -155,14 +155,14 @@ class PedidosList(ListView):
 
 class PedidosCrear(CreateView):
   model = Pedidos
-  success_url = "/panel-pedidos"
+  success_url = "/blog/pedidos/listado"
   fields = ["nombre_cliente", "empleado", "pedido", "estado", "fecha"]
 
 """update view de pedidos"""
 
 class PedidosActualizar(UpdateView):
   model = Pedidos
-  success_url = "/panel-pedidos"
+  success_url = "/blog/pedidos/listado"
   fields = ["nombre_cliente", "empleado", "pedido", "estado", "fecha"]
 
 

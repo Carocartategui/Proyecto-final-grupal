@@ -57,3 +57,6 @@ class ProfileUpdate(UpdateView):
     model = User
     fields = ['username']
     success_url = reverse_lazy("blog-login")
+
+class DetailProfile(DetailView):
+    model=Post

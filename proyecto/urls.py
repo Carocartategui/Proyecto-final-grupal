@@ -17,14 +17,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import (AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About)
+from AppCoder.views import (PedidosCrear, PedidosList, PedidosActualizar,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About)
 from blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls), #-> acer 1234
     path('about', About),  #<- funciona para poner la decripcion de lo que hacela pagina
-    path('blog/pedidos/alta', AltaPedidos.as_view()), # <- lo rompi tratando de poner la fecha automatica jajaja
-    path('blog/pedidos/listado', mostrar_pedidos), #<- funciona
+    path('blog/pedidos/alta', PedidosCrear.as_view(), name="pedidos-crear"), # <- lo rompi tratando de poner la fecha automatica jajaja
+    path('blog/pedidos/listado', PedidosList.as_view(), name="pedidos-lista"), #<- funciona
+    path('blog/pedidos/<int:pk>/actualizar', PedidosActualizar.as_view(), name="pedidos-actualizar"),
     path('panel-empleados/', EmpleadosList.as_view(), name="empleados-lista"),  #<- funciona
     path('panel-empleados/crear', EmpleadosCrear.as_view(), name="empleados-crear"), #<- funciona
     path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
