@@ -17,16 +17,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import (AltaEmpleados, buscarEmpleado, mostrar_empleados, AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About, Home, PedidosList, PedidosCrear, PedidosActualizar)
+from AppCoder.views import (AltaPedidos, mostrar_pedidos,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About)
 from blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls), #-> acer 1234
     path('about', About),  #<- funciona para poner la decripcion de lo que hacela pagina
-    path('home', Home),  #<- funciona para el home...(que me imagino que es lo mismo que el blog?)
-    path('empleados/alta', AltaEmpleados.as_view()), #<- ya funciona :)
-    path('empleado/buscar', buscarEmpleado.as_view()), # <- ya funciona :)
-    path('empleado/listado', mostrar_empleados), # <- ya funciona
     path('blog/pedidos/alta', AltaPedidos.as_view()), # <- lo rompi tratando de poner la fecha automatica jajaja
     path('blog/pedidos/listado', mostrar_pedidos), #<- funciona
     path('panel-empleados/', EmpleadosList.as_view(), name="empleados-lista"),  #<- funciona
@@ -34,7 +30,6 @@ urlpatterns = [
     path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
     path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
     path('blog/productos/listado', ProductosList.as_view(), name="productos-lista"),  #<- funciona
-    path('signup/', BlogSignUp.as_view(), name="blog-signup"),
     path('blog/', include('blog.urls')) #<- esto relaciona a los URLS de las funciones creadas en blog.
 ]
 

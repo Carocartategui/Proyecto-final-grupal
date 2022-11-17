@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.admin import User
 
 
 def index(request):
@@ -52,3 +53,7 @@ class BlogSignUp(CreateView):
     success_url = reverse_lazy("blog-login")
     template_name = "blog/signup.html"
 
+class ProfileUpdate(UpdateView):
+    model = User
+    fields = ['username']
+    success_url = reverse_lazy("blog-login")
