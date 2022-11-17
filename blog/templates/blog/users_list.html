@@ -2,19 +2,17 @@
 {% block titulo%} Lista de todos los usuarios {% endblock %}
 {% block contenido %}
 
-{% block buscar %} {% endblock %}
 
-{% for usuarios in object_list %}
+{% for usuarios in form.as_p %}
     <li>
         {{usuarios}}
 
-        <a href="{% url 'usuarios-actualizar' usuarios.id %}">Actualizar</a>
+        <a href="{% url 'profile-update' usuarios.id %}">Actualizar</a>
     
     
     </li>
 {% endfor %}    
-</ul>
 
-{% endblock %}
+
 
 {% endblock %}
