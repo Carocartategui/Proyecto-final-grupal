@@ -1,5 +1,5 @@
 from django import forms
-from AppCoder.models import Pedidos
+from AppCoder.models import Pedidos, Empleados
 
 
 class buscar_empleado(forms.Form):
@@ -11,11 +11,8 @@ class PedidosForm(forms.ModelForm):
     model = Pedidos
     fields = ['nombre_cliente', 'empleado', 'pedido', 'estado', 'fecha'] #-> saque la fecha por que la voy a poner automatico
 
-
-"""
-class ProductosForm(forms.ModelForm):
+class EmpleadosForm(forms.ModelForm):
   class Meta:
-    model = Productos
-    fields = ['nombre_producto', 'ingredientes', 'descripcion', 'codigo_producto']
+    model = Empleados
+    fields = ['nombre', 'apellido', 'direccion', 'numero_documento', 'numero_de_telefono', 'e_mail', 'contrasena']
 
-"""
