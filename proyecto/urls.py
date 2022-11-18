@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import (PedidosCrear, PedidosList, PedidosActualizar,EmpleadosList, EmpleadosCrear, EmpleadosBorrar, EmpleadosActualizar, ProductosList, About)
+from AppCoder.views import (PedidosCrear, PedidosList, PedidosActualizar, ProductosList, About)
 from blog.views import *
 
 urlpatterns = [
@@ -26,10 +26,6 @@ urlpatterns = [
     path('blog/pedidos/alta', PedidosCrear.as_view(), name="pedidos-crear"), # <- lo rompi tratando de poner la fecha automatica jajaja
     path('blog/pedidos/listado', PedidosList.as_view(), name="pedidos-lista"), #<- funciona
     path('blog/pedidos/<int:pk>/actualizar', PedidosActualizar.as_view(), name="pedidos-actualizar"),
-    path('panel-empleados/', EmpleadosList.as_view(), name="empleados-lista"),  #<- funciona
-    path('panel-empleados/crear', EmpleadosCrear.as_view(), name="empleados-crear"), #<- funciona
-    path('panel-empleados/<int:pk>/borrar', EmpleadosBorrar.as_view(), name="empleados-borrar"),  #<- funciona
-    path('panel-empleados/<int:pk>/actualizar', EmpleadosActualizar.as_view(), name="empleados-actualizar"),  #<- funciona
     path('blog/productos/listado', ProductosList.as_view(), name="productos-lista"),  #<- funciona
     path('blog/', include('blog.urls'), name="Home") #<- esto relaciona a los URLS de las funciones creadas en blog.
 ]
@@ -37,15 +33,3 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-"""    
-
-Borre los path que no usamos mas (Matias)
-    path('hola-mundo/saludar', saludo),
-    path('hola-mundo/saludo_dos', saludo_dos),
-    path('saludar_a/<nombre>', saludar_a),
-    path('mostrar-mi-template/', mostrar_mi_template),
-    path('saludar/', index),
-    path('mostrar-notas/', index_tres),
-    path('mi-familia/', monstrar_familiares),
-    
-    """

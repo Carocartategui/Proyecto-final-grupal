@@ -55,20 +55,4 @@ class BlogSignUp(CreateView):
     success_url = reverse_lazy("blog-login")
     template_name = "blog/signup.html"
 
-class ProfileUpdate(UpdateView):
-    model = User
-    fields = ['username']
-    success_url = reverse_lazy("blog-login")
 
-class DetailProfile(DetailView):
-    model=Post
-
-
-class UpdateUserView(generic.UpdateView):
-    form_class = EditUserProfileForm
-    success_url = reverse_lazy("Home")
-    template_name = "authors/edit_user_profile.html"
-    
-
-    def get_object(slef):
-        return slef.request.user
