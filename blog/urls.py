@@ -12,4 +12,5 @@ urlpatterns = [
     path('blog/login/', BlogLogin.as_view(), name="blog-login"),
     path('blog/logout/', BlogLogout.as_view(), name="blog-logout"),
     path('blog/signup/', BlogSignUp.as_view(), name="blog-signup"),
+    path('user-profile/<int:pk>', ProfileUpdate.as_view(), name="profile-update"),
 ]

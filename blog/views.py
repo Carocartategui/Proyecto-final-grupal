@@ -9,6 +9,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.admin import User
 
+
 @login_required(login_url='/blog/login/')
 def index(request):
     posts = Post.objects.order_by('-date_published').all()
@@ -54,4 +55,7 @@ class BlogSignUp(CreateView):
     success_url = reverse_lazy("blog-login")
     template_name = "blog/signup.html"
 
-
+class ProfileUpdate(UpdateView):
+    model = User
+    fields = ['username', 'first_name', 'last_name', 'email']
+    success_url = reverse_lazy("blog-login")
